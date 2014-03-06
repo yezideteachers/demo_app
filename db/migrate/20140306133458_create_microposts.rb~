@@ -1,0 +1,14 @@
+class CreateMicroposts < ActiveRecord::Migration
+  def change
+    create_table :microposts do |t|
+      t.string :content
+      t.integer :user_id
+
+
+      t.timestamps
+    end
+  end
+end
+class Micropost < ActiveRecord::Base
+  validates :content, :length => { :maximum => 10 }
+end
